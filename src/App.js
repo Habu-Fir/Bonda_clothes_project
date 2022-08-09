@@ -4,9 +4,7 @@ import "./categories.styles.scss";
 import Home from "./routes/Home/Home";
 import Navigation from "./routes/navigations/navigation";
 import Authentication from "./Component/Authentication/Authentication";
-const Shop = () => {
-  return <h2> i am shoping pager</h2>;
-};
+import Shop from "./routes/Shop/Shop";
 
 const App = () => {
   return (
