@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import FormInput from "../form-input/form-input";
 import Button from "../button/button";
+import { useNavigate } from "react-router-dom";
 
 import {
   createUserDocumentFromAuth,
@@ -21,9 +22,13 @@ const SignInForm = () => {
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
   };
+  const navigate = useNavigate();
 
   const SignInWithGoogle = async () => {
     await SignInWithGooglePopup();
+  };
+  const handleSignIn = () => {
+    navigate("/");
   };
 
   const handleSubmit = async (event) => {
@@ -77,7 +82,9 @@ const SignInForm = () => {
           type="password"
         />
         <div className="buttons-container">
-          <Button type="submit"> Sign In</Button>
+          <Button type="submit" onClick={handleSignIn} to="/">
+            Sign In
+          </Button>
           <Button onClick={SignInWithGoogle} buttonType="google">
             Google Sign In
           </Button>
